@@ -75,17 +75,17 @@
 		    	</div>
     		</div>
 
-    		<p class="mb-0 mt-1"><a class="btn btn-primary btn-lg" href="http://www.cauci.com/index.html" target="_blank">Learn more about CAUCI &raquo;</a></p>
+    		<p class="mb-0 mt-1" id="stats"><a class="btn btn-primary btn-lg" href="http://www.cauci.com/index.html" target="_blank">Learn more about CAUCI &raquo;</a></p>
     	</div>
-    </div>
+    </div >
 
-    <div class="container-fluid" id="stats">
+    <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-6 offset-md-3 text-center border mb-4 total-fundraised">
     			<h1 class="display-4">Total Amount Fundraised</h2>
 				<div class="col-md-10 offset-md-1"><hr/></div>
 				<!--Input Total Amount Fundraised -->
-    			<h1 class="display-4">$1200</h2>
+    			<h1 class="display-4">$17.35</h1>
     		</div>
 
     		<div class="col-md-6">
@@ -94,10 +94,13 @@
 	    		</div>
     			<div class="col-md-10 offset-md-1 text-left">
     				<hr/>
-    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Leading Big: Jackson</h1>
-    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Coins: Jackson ($8.50)</h1>
-    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Dollars: Jackson ($5.50)</h1>
-    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Fundraised: Jackson ($5.50)</h1>
+    				<!--Input Fun Stats -->
+
+                	<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Leading Big: Katherine</h1>
+    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Coins: Jackson ($3.50)</h1>
+    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Dollars: Jackson ($8.00)</h1>
+    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Fundraised: Jackson ($11.50)</h1>
+    				
     			</div>
     		</div>
 
@@ -108,7 +111,7 @@
 
     			<div class="col-md-10 offset-md-1"><hr/></div>
 
-	    		<div class="chart" id="piechart">
+	    		<div class="chart ml-2" id="piechart">
 	    			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 	    			<script type="text/javascript">
@@ -121,13 +124,23 @@
 					  var data = google.visualization.arrayToDataTable([
 					  ['Players', 'Amt Fundraised'],
 					  //Input Pie Chart Data
-					  ['Work', 8.05],
-					  ['Friends', 2],
-					  ['Eat', 2],
-					  ['TV', 3],
-					  ['Gym', 2],
-					  ['Sleep', 7],
-					  ["hello",5]
+					  ['Katherine', 1.8],
+					  ['Amanda', 0.55],
+					  ['Crystal', 0.0],
+					  ['Adam', 0.0],
+					  ['Jana', 0.0],
+					  ['John Su', 0.0],
+					  ['Cory', 0.0],
+					  ['Simon', 0.0],
+					  ['Jon', 0.0],
+					  ['Anna', 0.0],
+					  ['Randy', 0.0],
+					  ['Sienna', 0.0],
+					  ['Jp', 0.0],
+					  ['Elisha', 0.0],
+					  ['Chloe', 0.0],
+					  ['Patrick', 3.5],
+					  ['Jackson', 11.5],
 					]);
 
 					// Optional; add a title and set the width and height of the chart
@@ -169,48 +182,142 @@
 
 	    		<tbody>
 	    			<!-- Table Entry Data -->
-	    			<tr>
-	    				<th scope="row">1</th>
-	    				<td>Jackson</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    			</tr>
-	    			<tr>
-	    				<th scope="row">1</th>
-	    				<td>Jackson</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    			</tr>
-	    			<tr>
-	    				<th scope="row">1</th>
-	    				<td>Jackson</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    			</tr>	    			
-	    			<tr>
-	    				<th scope="row">1</th>
-	    				<td>Jackson</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    			</tr>
-	    			<tr>
-	    				<th scope="row">1</th>
-	    				<td>Jackson</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    			</tr>
-	    			<tr class="table-danger">
-	    				<th scope="row">1</th>
-	    				<td>Jackson</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    				<td>$-5.50</td>
-	    			</tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Katherine</td>
+                        <td>$1.80</td>
+                        <td>$1.80</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Amanda</td>
+                        <td>$0.55</td>
+                        <td>$0.55</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Crystal</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Adam</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Jana</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>John Su</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Cory</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Simon</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>Jon</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>Anna</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>Randy</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>Sienna</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">13</th>
+                        <td>Jp</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>Elisha</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr class="table-danger">
+                        <th scope="row">15</th>
+                        <td>Chloe</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr class="table-danger">
+                        <th scope="row">16</th>
+                        <td>Patrick</td>
+                        <td>$-0.50</td>
+                        <td>$1.50</td>
+                        <td>$2.00</td>
+                    </tr> 
+
+                    <tr class="table-danger">
+                        <th scope="row">17</th>
+                        <td>Jackson</td>
+                        <td>$-4.50</td>
+                        <td>$3.50</td>
+                        <td>$8.00</td>
+                    </tr> 
 	    		</tbody>
     		</table>
     	</div>
@@ -221,6 +328,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-	
+
 </body>
 </html>
