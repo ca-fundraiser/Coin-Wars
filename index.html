@@ -17,6 +17,9 @@
 	<link rel="shortcut icon" href="images/favicon.ico"> 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
 
+    <!--Chart JS 2.7.1 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1.0.0/dist/chartjs-plugin-deferred.min.js" crossorigin="anonymous"></script>
 
 	<!-- Bootstrap CSS 4.0.0 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -94,7 +97,7 @@
     			<h1 class="display-4">Total Amount Fundraised</h2>
 				<div class="col-md-10 offset-md-1"><hr/></div>
 				<!--Input Total Amount Fundraised -->
-    			<h1 class="display-4">$80.29</h1>
+    			<h1 class="display-4">$82.36</h1>
     		</div>
 
     		<div class="col-md-6">
@@ -105,10 +108,10 @@
     				<hr/>
     				<!--Input Fun Stats -->
 
-                	<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Leading Big: Patrick</h1>
-    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Coins: Patrick ($34.38)</h1>
-    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Dollars: Jackson ($15.00)</h1>
-    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Fundraised: Patrick ($38.38)</h1>
+                	<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Leading Big: Patrick</h1>
+    				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Coins: Patrick ($34.38)</h1>
+    				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Dollars: Jackson ($15.00)</h1>
+    				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Fundraised: Patrick ($38.38)</h1>
     				
     			</div>
     		</div>
@@ -120,53 +123,124 @@
 
     			<div class="col-md-10 offset-md-1"><hr/></div>
 
-	    		<div class="chart ml-2" id="piechart">
-	    			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	    		<div class="chart text-center">
+                    <canvas class="" id="doughnut-chart"></canvas>
+                    <script type="text/javascript">                        
+                        var config = {
+                            type: 'doughnut',
+                            data: {
+                                datasets: [{
+                                    data: [
+                                        0,
+                                        0,
+                                        //Input Player Data Chart
+                                        38.38,
+                                        5.75,
+                                        3.05,
+                                        2.72,
+                                        2.47,
+                                        2.07,
+                                        1.52,
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        1.0,
+                                        2.0,
+                                        23.4,
+                                    ],
+                                    backgroundColor: [
+                                    "",
+                                    "",
+                                    //Input Player Color Chart
+                                    "#3498DB",
+                                    "#F7464A",
+                                    "#46BFBD",
+                                    "#7DCEA0",
+                                    "#27AE60",
+                                    "#2980B9",
+                                    "#BB8FCE",
+                                    "#F8C471",
+                                    "#A3E4D7",
+                                    "#4D5360",
+                                    "#E74C3C",
+                                    "#9B59B6",
+                                    "#F39C12",
+                                    "#85C1E9",
+                                    "#F1C40F",
+                                    "#16A085",
+                                    "#FDB45C",
+                                    ]
+                                },
+                                {
+                                    data: [
+                                        //Input Fundraise Data
+                                        60.36,
+                                        22.0,
+                                    ],
+                                    backgroundColor: [
+                                        //Input Fundraise Color
+                                        "#28B463",
+                                        "#2E86C1",
+                                    ]
+                                }
+                                ],
+                                labels: [
+                                	//Input Fundraise Label
+                                    "Coins (73.3%)",
+                                    "Bills (26.7%)",
+                                    //Input Player Label Chart
+                                    "Patrick (46.6%)",
+                                    "Elisha (7.0%)",
+                                    "Jon (3.7%)",
+                                    "Sienna (3.3%)",
+                                    "Katherine (3.0%)",
+                                    "Anna (2.5%)",
+                                    "Amanda (1.8%)",
+                                    "Crystal (0.0%)",
+                                    "Adam (0.0%)",
+                                    "Jana (0.0%)",
+                                    "John Su (0.0%)",
+                                    "Cory (0.0%)",
+                                    "Simon (0.0%)",
+                                    "Chloe (0.0%)",
+                                    "Randy (1.2%)",
+                                    "Jp (2.4%)",
+                                    "Jackson (28.4%)",
+                                ]
+                            },
+                            options: {
+                                cutoutPercentage: 25,
+                                responsive: true,
+                                legend: {
+                                    display: false
+                                },
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true,
+                                    duration: 3600,
+                                    easing: 'easeOutBounce'
+                                }
+                            },
+                            plugins: {
+                                deferred: {
+                                    xOffset: 150,
+                                    yOffset: '90%', 
+                                    delay: 1700
+                                }
+                            }
+                        };
 
-	    			<script type="text/javascript">
-					// Load google charts
-					google.charts.load('current', {'packages':['corechart']});
-					google.charts.setOnLoadCallback(drawChart);
-
-					// Draw the chart and set the chart values
-					function drawChart() {
-					  var data = google.visualization.arrayToDataTable([
-					  ['Players', 'Amt Fundraised'],
-					  //Input Pie Chart Data
-					  ['Patrick', 38.38],
-					  ['Elisha', 5.75],
-					  ['Jon', 3.05],
-					  ['Sienna', 2.72],
-					  ['Katherine', 2.47],
-					  ['Amanda', 1.52],
-					  ['Crystal', 0.0],
-					  ['Adam', 0.0],
-					  ['Jana', 0.0],
-					  ['John Su', 0.0],
-					  ['Cory', 0.0],
-					  ['Simon', 0.0],
-					  ['Anna', 0.0],
-					  ['Chloe', 0.0],
-					  ['Randy', 1.0],
-					  ['Jp', 2.0],
-					  ['Jackson', 23.4],
-					]);
-
-					// Optional; add a title and set the width and height of the chart
-					var options = {'chartArea': {width: '90%', height: '90%'},
-									backgroundColor: 'transparent',
-									pieHole: 0.5,
-					};
-
-					// Display the chart inside the <div> element with id="piechart"
-					var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-					chart.draw(data, options);
-					}
-					</script>
-					<div>
-						<p class="pb-0 caption">Yo Whats up lmao</p>	
-					</div>
-					
+                        window.onload = function() {
+                            var ctx = document.getElementById("doughnut-chart").getContext("2d");
+                            window.myDoughnut = new Chart(ctx, config);
+                        };                        
+                    </script>
+                    <p class="m-0 mt-1">Fundraised Amt = Coins + Dollars</p>
+                    <p class="m-0 mb-3">★★ Hover Over to See Data ★★</p>
 	    		</div>
 	    		
     		</div>
@@ -242,6 +316,14 @@
 
                     <tr>
                         <th scope="row">6</th>
+                        <td>Anna</td>
+                        <td>$2.07</td>
+                        <td>$2.07</td>
+                        <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">7</th>
                         <td>Amanda</td>
                         <td>$1.52</td>
                         <td>$1.52</td>
@@ -249,7 +331,7 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">7</th>
+                        <th scope="row">8</th>
                         <td>Crystal</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -257,7 +339,7 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">8</th>
+                        <th scope="row">9</th>
                         <td>Adam</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -265,7 +347,7 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">9</th>
+                        <th scope="row">10</th>
                         <td>Jana</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -273,7 +355,7 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">10</th>
+                        <th scope="row">11</th>
                         <td>John Su</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -281,7 +363,7 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">11</th>
+                        <th scope="row">12</th>
                         <td>Cory</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -289,16 +371,8 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">12</th>
-                        <td>Simon</td>
-                        <td>$0.00</td>
-                        <td>$0.00</td>
-                        <td>$0.00</td>
-                    </tr> 
-
-                    <tr>
                         <th scope="row">13</th>
-                        <td>Anna</td>
+                        <td>Simon</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
                         <td>$0.00</td>

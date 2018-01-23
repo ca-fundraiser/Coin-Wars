@@ -11,6 +11,11 @@ body {
 	/*background-color: #29a3a3 !important;*/
 }
 
+#doughnut-chart {
+	background-color: transparent;
+	width: 100%;
+}
+
 .total-fundraised {
 	background-color: #C5E1A5 !important;
 	border-radius: 45px !important;
@@ -23,11 +28,14 @@ body {
 
 .chart {
 	width: 100%;
-	min-height: 500px;
 }
 
 .highlight-outer-border {
 	border-style: solid;
 	border-radius: 15px;
 	border-color: red;
+}
+
+.caption {
+	position: absolute;
 }
