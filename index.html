@@ -9,8 +9,8 @@
 	<meta property="og:url"			 content="https://ca-fundraiser.github.io/Coin-Wars/"/>
 	<meta property="og:image"   	 content="https://ca-fundraiser.github.io/Coin-Wars/images/coinjar.png"/>
 	<meta property="og:image:type"   content="image/png">
-<!-- 	<meta property="og:image:width"  content="1024">
-	<meta property="og:image:height" content="1024"> -->
+	<meta property="og:image:width"  content="640">
+	<meta property="og:image:height" content="336">
 
 
 	<link rel = "stylesheet" type = "text/css" href = "style.css">
@@ -153,7 +153,9 @@
 					]);
 
 					// Optional; add a title and set the width and height of the chart
-					var options = {'chartArea': {width: '90%', height: '90%'}
+					var options = {'chartArea': {width: '90%', height: '90%'},
+									backgroundColor: 'transparent',
+									pieHole: 0.5,
 					};
 
 					// Display the chart inside the <div> element with id="piechart"
@@ -161,7 +163,12 @@
 					chart.draw(data, options);
 					}
 					</script>
+					<div>
+						<p class="pb-0 caption">Yo Whats up lmao</p>	
+					</div>
+					
 	    		</div>
+	    		
     		</div>
 
     	</div>
