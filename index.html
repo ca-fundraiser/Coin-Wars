@@ -20,6 +20,11 @@
     <!--Chart JS 2.7.1 -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1.0.0/dist/chartjs-plugin-deferred.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js" crossorigin="anonymous"></script>
+
+    <!-- Chartist JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
 	<!-- Bootstrap CSS 4.0.0 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -97,27 +102,33 @@
     			<h1 class="display-4">Total Amount Fundraised</h2>
 				<div class="col-md-10 offset-md-1"><hr/></div>
 				<!--Input Total Amount Fundraised -->
-    			<h1 class="display-4">$89.17</h1>
+    			<h1 class="display-4">$148.29</h1>
     		</div>
 
+            <div class="chart col-md-10 offset-md-1 text-center">
+            	<h1 class="display-4 mt-3 mb-0"> The Battle</h1>
+            	<div class="col-md-8 offset-md-2 mt-0"><hr/></div>
+                <canvas id="line-chart"></canvas>
+            </div>
+
     		<div class="col-md-6">
-	    		<div class="col-md-12 text-center">
+	    		<div class="col-md-12 text-center mt-5">
 	    			<h1 class="display-4">Fun Stats</h1>
 	    		</div>
     			<div class="col-md-10 offset-md-1 text-left">
     				<hr/>
     				<!--Input Fun Stats -->
 
-                	<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Leading Big: Patrick</h1>
+                	<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Leading Big: Jon</h1>
     				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Coins: Patrick ($34.38)</h1>
-    				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Dollars: Jackson ($15.00)</h1>
-    				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Fundraised: Patrick ($38.38)</h1>
+    				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Dollars: Patrick ($44.00)</h1>
+    				<h2 class="mb-5"> <i class="fas fa-angle-double-right"></i> Most Fundraised: Patrick ($78.38)</h1>
     				
     			</div>
     		</div>
 
     		<div class="col-md-6">
-	    		<div class="col-md-12 text-center">
+	    		<div class="col-md-12 text-center mt-5">
 	    			<h1 class="display-4">Fundraising Chart</h1>
 	    		</div>
 
@@ -125,7 +136,196 @@
 
 	    		<div class="chart text-center">
                     <canvas class="" id="doughnut-chart"></canvas>
-                    <script type="text/javascript">                        
+                    <script type="text/javascript">
+	                    var config1 = {
+	                        type: 'line',
+	                        data: {
+	                        	//Input Labels Line Chart
+	                            labels: ['Start', 'W2', 'W3', 'W4'],
+	                            datasets: [
+	                            //Input Data Line Chart
+	                            {
+	                                label: "Crystal",
+	                                backgroundColor: "#4D5360",
+	                                borderColor: "#4D5360",
+	                                data: [0,0.0,0.0,0.5,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Patrick",
+	                                backgroundColor: "#949FB1",
+	                                borderColor: "#949FB1",
+	                                data: [0,-0.5,3e+01,-9.6,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Adam",
+	                                backgroundColor: "#3498DB",
+	                                borderColor: "#3498DB",
+	                                data: [0,0.0,0.0,0.0,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Jana",
+	                                backgroundColor: "#16A085",
+	                                borderColor: "#16A085",
+	                                data: [0,0.0,0.0,0.01,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "John Su",
+	                                backgroundColor: "#F7464A",
+	                                borderColor: "#F7464A",
+	                                data: [0,0.0,0.0,0.0,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Cory",
+	                                backgroundColor: "#46BFBD",
+	                                borderColor: "#46BFBD",
+	                                data: [0,0.0,0.0,0.0,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Simon",
+	                                backgroundColor: "#2980B9",
+	                                borderColor: "#2980B9",
+	                                data: [0,0.0,0.0,0.0,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Jon",
+	                                backgroundColor: "#8E44AD",
+	                                borderColor: "#8E44AD",
+	                                data: [0,3.0,9.9,9.9,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Anna",
+	                                backgroundColor: "#9B59B6",
+	                                borderColor: "#9B59B6",
+	                                data: [0,0.0,2.1,2.1,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Katherine",
+	                                backgroundColor: "#27AE60",
+	                                borderColor: "#27AE60",
+	                                data: [0,1.8,2.5,2.5,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Amanda",
+	                                backgroundColor: "#F1C40F",
+	                                borderColor: "#F1C40F",
+	                                data: [0,0.55,1.5,-0.21,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Randy",
+	                                backgroundColor: "#1ABC9C",
+	                                borderColor: "#1ABC9C",
+	                                data: [0,0.0,-1.0,-2.0,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Sienna",
+	                                backgroundColor: "#2ECC71",
+	                                borderColor: "#2ECC71",
+	                                data: [0,2.0,2.7,2.7,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Jackson",
+	                                backgroundColor: "#7DCEA0",
+	                                borderColor: "#7DCEA0",
+	                                data: [0,-4.5,-6.6,-8.8,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "JP",
+	                                backgroundColor: "#A3E4D7",
+	                                borderColor: "#A3E4D7",
+	                                data: [0,-2.0,-2.0,-2.0,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Elisha",
+	                                backgroundColor: "#FDB45C",
+	                                borderColor: "#FDB45C",
+	                                data: [0,0.0,5.8,5.8,],
+	                                fill: false,
+	                            },
+	                            {
+	                                label: "Chloe",
+	                                backgroundColor: "#85C1E9",
+	                                borderColor: "#85C1E9",
+	                                data: [0,0.0,0.0,7.6,],
+	                                fill: false,
+	                            },
+	                            ]
+	                        },
+	                        options: {
+	                            responsive: true,
+	                            legend: {
+	                            	display: false,
+	                            },
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true,
+                                    duration: 3600,
+                                    easing: 'easeInOutBack'
+                                },
+	                            tooltips: {
+	                                mode: 'point',
+	                                intersect: true,
+	                            },
+	                            hover: {
+	                                mode: 'nearest',
+	                                intersect: false,
+	                            },
+	                            scales: {
+	                                xAxes: [{
+	                                    display: true,
+	                                    scaleLabel: {
+	                                        display: true,
+	                                        labelString: 'Week'
+	                                    }
+	                                }],
+	                                yAxes: [{
+	                                    display: true,
+	                                    ticks: {
+	                                    	//Input Tick Data
+                                        min: -10,
+                                        max: 33,
+	                                    },
+	                                    scaleLabel: {
+	                                        display: true,
+	                                        labelString: 'Points ($)'
+	                                    }
+	                                }]
+	                            },
+	                            plugins: {
+	                            	annotation: {
+                            		    annotations: [{
+									        type: 'line',
+									        mode: 'horizontal',
+									        scaleID: 'y-axis-0',
+									        value: '3',
+									        borderColor: 'tomato',
+									        borderWidth: 5,
+									    }],
+									    drawTime: "afterDraw"
+	                            	},
+                                	deferred: {
+	                                    xOffset: 150,
+	                                    yOffset: '80%', 
+	                                    delay: 100
+                                	}
+	                            }
+	                        }
+	                    };
+
                         var config = {
                             type: 'doughnut',
                             data: {
@@ -134,52 +334,52 @@
                                         0,
                                         0,
                                         //Input Player Data Chart
-                                        38.38,
-                                        9.86,
-                                        5.75,
-                                        2.72,
-                                        2.47,
-                                        2.07,
-                                        1.52,
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        1.0,
-                                        2.0,
-                                        23.4,
+                                        9.860000,
+                                        9.580000,
+                                        5.750000,
+                                        2.720000,
+                                        2.470000,
+                                        2.070000,
+                                        0.500000,
+                                        0.010000,
+                                        0.000000,
+                                        0.000000,
+                                        0.000000,
+                                        0.000000,
+                                        5.790000,
+                                        2.000000,
+                                        2.000000,
+                                        27.160000,
+                                        78.380000,
                                     ],
                                     backgroundColor: [
                                     "",
                                     "",
                                     //Input Player Color Chart
-                                    "#E74C3C",
-                                    "#BB8FCE",
-                                    "#46BFBD",
-                                    "#8E44AD",
-                                    "#949FB1",
-                                    "#16A085",
-                                    "#27AE60",
-                                    "#FDB45C",
-                                    "#3498DB",
-                                    "#F7464A",
-                                    "#2980B9",
-                                    "#9B59B6",
-                                    "#A3E4D7",
-                                    "#F8C471",
-                                    "#2ECC71",
-                                    "#85C1E9",
                                     "#4D5360",
+                                    "#949FB1",
+                                    "#3498DB",
+                                    "#16A085",
+                                    "#F7464A",
+                                    "#46BFBD",
+                                    "#2980B9",
+                                    "#8E44AD",
+                                    "#9B59B6",
+                                    "#27AE60",
+                                    "#F1C40F",
+                                    "#1ABC9C",
+                                    "#2ECC71",
+                                    "#7DCEA0",
+                                    "#A3E4D7",
+                                    "#FDB45C",
+                                    "#85C1E9",
                                     ]
                                 },
                                 {
                                     data: [
                                         //Input Fundraise Data
-                                        67.17,
-                                        22.0,
+                                        78.290000,
+                                        70.000000,
                                     ],
                                     backgroundColor: [
                                         //Input Fundraise Color
@@ -190,26 +390,26 @@
                                 ],
                                 labels: [
                                 	//Input Fundraise Label
-                                    "Coins (75.3%)",
-                                    "Bills (24.7%)",
+                                    "Coins (52.8%)",
+                                    "Bills (47.2%)",
                                     //Input Player Label Chart
-                                    "Patrick (43.0%)",
-                                    "Jon (11.1%)",
-                                    "Elisha (6.4%)",
-                                    "Sienna (3.1%)",
-                                    "Katherine (2.8%)",
-                                    "Anna (2.3%)",
-                                    "Amanda (1.7%)",
-                                    "Crystal (0.0%)",
-                                    "Adam (0.0%)",
+                                    "Jon (6.6%)",
+                                    "Chloe (6.5%)",
+                                    "Elisha (3.9%)",
+                                    "Sienna (1.8%)",
+                                    "Katherine (1.7%)",
+                                    "Anna (1.4%)",
+                                    "Crystal (0.3%)",
                                     "Jana (0.0%)",
+                                    "Adam (0.0%)",
                                     "John Su (0.0%)",
                                     "Cory (0.0%)",
                                     "Simon (0.0%)",
-                                    "Chloe (0.0%)",
-                                    "Randy (1.1%)",
-                                    "Jp (2.2%)",
-                                    "Jackson (26.2%)",
+                                    "Amanda (3.9%)",
+                                    "Randy (1.3%)",
+                                    "Jp (1.3%)",
+                                    "Jackson (18.3%)",
+                                    "Patrick (52.9%)",
                                 ]
                             },
                             options: {
@@ -237,6 +437,9 @@
                         window.onload = function() {
                             var ctx = document.getElementById("doughnut-chart").getContext("2d");
                             window.myDoughnut = new Chart(ctx, config);
+
+	                        var ctx1 = document.getElementById("line-chart").getContext("2d");
+	                        window.myLine = new Chart(ctx1, config1);
                         };                        
                     </script>
                     <p class="m-0 mt-1">Fundraised Amt = Coins + Dollars</p>
@@ -253,7 +456,7 @@
     		<div class="col-md-12 text-center">
     			<h1 class="display-4">Current Standings</h1>
     			<!-- Input Updated Date -->
-    			<p class="mb-0">Updated Since January 25, 2018</p>
+    			<p class="mb-0">Updated Since January 28, 2018</p>
     		</div>
 
 			<div class="col-md-10  offset-md-1">
@@ -276,18 +479,18 @@
 
                     <tr>
                         <th scope="row">1</th>
-                        <td>Patrick</td>
-                        <td>$30.38</td>
-                        <td>$34.38</td>
-                        <td>$4.00</td>
-                    </tr> 
-
-                    <tr>
-                        <th scope="row">2</th>
                         <td>Jon</td>
                         <td>$9.86</td>
                         <td>$9.86</td>
                         <td>$0.00</td>
+                    </tr> 
+
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Chloe</td>
+                        <td>$7.58</td>
+                        <td>$8.58</td>
+                        <td>$1.00</td>
                     </tr> 
 
                     <tr>
@@ -324,17 +527,17 @@
 
                     <tr>
                         <th scope="row">7</th>
-                        <td>Amanda</td>
-                        <td>$1.52</td>
-                        <td>$1.52</td>
+                        <td>Crystal</td>
+                        <td>$0.50</td>
+                        <td>$0.50</td>
                         <td>$0.00</td>
                     </tr> 
 
                     <tr>
                         <th scope="row">8</th>
-                        <td>Crystal</td>
-                        <td>$0.00</td>
-                        <td>$0.00</td>
+                        <td>Jana</td>
+                        <td>$0.01</td>
+                        <td>$0.01</td>
                         <td>$0.00</td>
                     </tr> 
 
@@ -348,14 +551,6 @@
 
                     <tr>
                         <th scope="row">10</th>
-                        <td>Jana</td>
-                        <td>$0.00</td>
-                        <td>$0.00</td>
-                        <td>$0.00</td>
-                    </tr> 
-
-                    <tr>
-                        <th scope="row">11</th>
                         <td>John Su</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -363,7 +558,7 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">12</th>
+                        <th scope="row">11</th>
                         <td>Cory</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -371,7 +566,7 @@
                     </tr> 
 
                     <tr>
-                        <th scope="row">13</th>
+                        <th scope="row">12</th>
                         <td>Simon</td>
                         <td>$0.00</td>
                         <td>$0.00</td>
@@ -379,23 +574,23 @@
                     </tr> 
 
                     <tr>
+                        <th scope="row">13</th>
+                        <td>Amanda</td>
+                        <td>$-0.21</td>
+                        <td>$2.79</td>
+                        <td>$3.00</td>
+                    </tr> 
+
+                    <tr>
                         <th scope="row">14</th>
-                        <td>Chloe</td>
+                        <td>Randy</td>
+                        <td>$-2.00</td>
                         <td>$0.00</td>
-                        <td>$0.00</td>
-                        <td>$0.00</td>
+                        <td>$2.00</td>
                     </tr> 
 
                     <tr class="table-danger">
                         <th scope="row">15</th>
-                        <td>Randy</td>
-                        <td>$-1.00</td>
-                        <td>$0.00</td>
-                        <td>$1.00</td>
-                    </tr> 
-
-                    <tr class="table-danger">
-                        <th scope="row">16</th>
                         <td>Jp</td>
                         <td>$-2.00</td>
                         <td>$0.00</td>
@@ -403,11 +598,19 @@
                     </tr> 
 
                     <tr class="table-danger">
-                        <th scope="row">17</th>
+                        <th scope="row">16</th>
                         <td>Jackson</td>
-                        <td>$-6.60</td>
-                        <td>$8.40</td>
-                        <td>$15.00</td>
+                        <td>$-8.84</td>
+                        <td>$9.16</td>
+                        <td>$18.00</td>
+                    </tr> 
+
+                    <tr class="table-danger">
+                        <th scope="row">17</th>
+                        <td>Patrick</td>
+                        <td>$-9.62</td>
+                        <td>$34.38</td>
+                        <td>$44.00</td>
                     </tr> 
 	    		</tbody>
     		</table>
